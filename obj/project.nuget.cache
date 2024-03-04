@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "NLbwXlBhqD7UDMXxIqKETfJ2byr8JOng96p5QjXiCjaMZdeZOSu7PH4QX2U7/0ecb78jbzU5OwZX3HwL7hgLpA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\joshi.dixit\\Desktop\\pcfaggrid\\pcfaggrid.pcfproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\joshi.dixit\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.0\\microsoft.netframework.referenceassemblies.1.0.0.nupkg.sha512",
+    "C:\\Users\\joshi.dixit\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net462\\1.0.0\\microsoft.netframework.referenceassemblies.net462.1.0.0.nupkg.sha512",
+    "C:\\Users\\joshi.dixit\\.nuget\\packages\\microsoft.powerapps.msbuild.pcf\\1.30.2\\microsoft.powerapps.msbuild.pcf.1.30.2.nupkg.sha512"
+  ],
+  "logs": []
+}
