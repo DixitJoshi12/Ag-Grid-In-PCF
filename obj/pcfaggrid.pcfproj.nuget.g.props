@@ -13,6 +13,6 @@
     <SourceRoot Include="C:\Users\joshi.dixit\.nuget\packages\" />
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)microsoft.powerapps.msbuild.pcf\1.30.2\build\Microsoft.PowerApps.MSBuild.Pcf.props" Condition="Exists('$(NuGetPackageRoot)microsoft.powerapps.msbuild.pcf\1.30.2\build\Microsoft.PowerApps.MSBuild.Pcf.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.powerapps.msbuild.pcf\1.31.2\build\Microsoft.PowerApps.MSBuild.Pcf.props" Condition="Exists('$(NuGetPackageRoot)microsoft.powerapps.msbuild.pcf\1.31.2\build\Microsoft.PowerApps.MSBuild.Pcf.props')" />
   </ImportGroup>
 </Project>

@@ -1,3 +1,10 @@
+/*
+ * Theme.tsx
+ * Description: React component for changing the theme of the grid
+ * Author: Dixit Joshi
+ * Version: 1.0.1
+ * License: MIT
+ */
 import React from "react";
 interface SelectComponentProps{
     options : {[key:string]:string},

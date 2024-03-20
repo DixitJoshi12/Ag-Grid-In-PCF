@@ -6,8 +6,8 @@
   "expectedPackageFiles": [
     "C:\\Users\\joshi.dixit\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.0\\microsoft.netframework.referenceassemblies.1.0.0.nupkg.sha512",
     "C:\\Users\\joshi.dixit\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net462\\1.0.0\\microsoft.netframework.referenceassemblies.net462.1.0.0.nupkg.sha512",
-    "C:\\Users\\joshi.dixit\\.nuget\\packages\\microsoft.powerapps.msbuild.pcf\\1.30.2\\microsoft.powerapps.msbuild.pcf.1.30.2.nupkg.sha512",
-    "C:\\Users\\joshi.dixit\\.nuget\\packages\\microsoft.powerapps.msbuild.solution\\1.30.2\\microsoft.powerapps.msbuild.solution.1.30.2.nupkg.sha512"
+    "C:\\Users\\joshi.dixit\\.nuget\\packages\\microsoft.powerapps.msbuild.pcf\\1.31.2\\microsoft.powerapps.msbuild.pcf.1.31.2.nupkg.sha512",
+    "C:\\Users\\joshi.dixit\\.nuget\\packages\\microsoft.powerapps.msbuild.solution\\1.31.2\\microsoft.powerapps.msbuild.solution.1.31.2.nupkg.sha512"
   ],
   "logs": []
 }

@@ -14,13 +14,13 @@
           "build/Microsoft.NETFramework.ReferenceAssemblies.net462.targets": {}
         }
       },
-      "Microsoft.PowerApps.MSBuild.Pcf/1.30.2": {
+      "Microsoft.PowerApps.MSBuild.Pcf/1.31.2": {
         "type": "package",
         "build": {
           "build/_._": {}
         }
       },
-      "Microsoft.PowerApps.MSBuild.Solution/1.30.2": {
+      "Microsoft.PowerApps.MSBuild.Solution/1.31.2": {
         "type": "package",
         "build": {
           "build/Microsoft.PowerApps.MSBuild.Solution.props": {},
@@ -385,10 +385,10 @@
         "microsoft.netframework.referenceassemblies.net462.nuspec"
       ]
     },
-    "Microsoft.PowerApps.MSBuild.Pcf/1.30.2": {
-      "sha512": "IVl1Q2LnaAGrmyTldi/YFJYhRqPdaPA4Y4IBpTDIHm10COEln0PZueqQg1mhMHFgQFV7FjbCxeopJAbEfVYdjA==",
+    "Microsoft.PowerApps.MSBuild.Pcf/1.31.2": {
+      "sha512": "UzimaMndqFUIByzVFAOWW6NT+iUAYmEzvIRhNChULxgT5GT7jTi1ni4kUtSRNVP46xH70qBJo5GaRvP2rs5Omw==",
       "type": "package",
-      "path": "microsoft.powerapps.msbuild.pcf/1.30.2",
+      "path": "microsoft.powerapps.msbuild.pcf/1.31.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -396,7 +396,7 @@
         "LICENSE.txt",
         "build/Microsoft.PowerApps.MSBuild.Pcf.props",
         "build/Microsoft.PowerApps.MSBuild.Pcf.targets",
-        "microsoft.powerapps.msbuild.pcf.1.30.2.nupkg.sha512",
+        "microsoft.powerapps.msbuild.pcf.1.31.2.nupkg.sha512",
         "microsoft.powerapps.msbuild.pcf.nuspec",
         "tasks/Microsoft.PowerApps.MSBuild.Pcf.tasks",
         "tasks/net472/Microsoft.PowerPlatform.MSBuild.Telemetry.Tasks.dll",
@@ -477,10 +477,10 @@
         "tasks/net6.0/runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll"
       ]
     },
-    "Microsoft.PowerApps.MSBuild.Solution/1.30.2": {
-      "sha512": "kXIrgrUvpZx5cfkU7oiFxfIW0diRWrslEaZKoYxIIJZsNIpSWTy2F40Ph1wcVFix6gUO4TTDrJrXaMvRp6riLg==",
+    "Microsoft.PowerApps.MSBuild.Solution/1.31.2": {
+      "sha512": "ABZ7i1iB8OthtdqCVHGaMwt/ViyJ6KEpkVGSxHSndf4f6S2kRIw7bLLwRmuxhJKWI9dzjA/hOkjA04gwTRhbPA==",
       "type": "package",
-      "path": "microsoft.powerapps.msbuild.solution/1.30.2",
+      "path": "microsoft.powerapps.msbuild.solution/1.31.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -490,7 +490,7 @@
         "build/Microsoft.PowerApps.MSBuild.Solution.targets",
         "buildMultiTargeting/Microsoft.PowerApps.MSBuild.Solution.props",
         "buildMultiTargeting/Microsoft.PowerApps.MSBuild.Solution.targets",
-        "microsoft.powerapps.msbuild.solution.1.30.2.nupkg.sha512",
+        "microsoft.powerapps.msbuild.solution.1.31.2.nupkg.sha512",
         "microsoft.powerapps.msbuild.solution.nuspec",
         "tasks/Microsoft.PowerApps.MSBuild.Solution.tasks",
         "tasks/net472/LibGit2Sharp.dll",
