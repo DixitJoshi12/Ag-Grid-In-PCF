@@ -6,26 +6,17 @@
  * License: MIT
  */
 
-import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useMemo} from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/styles/ag-grid.css'; // Core CSS
 import 'ag-grid-community/styles/ag-theme-quartz.css'; // Theme CSS
 import 'ag-grid-community/styles/ag-theme-alpine.css';
 import 'ag-grid-community/styles/ag-theme-balham.css';
 import 'ag-grid-enterprise';
-import {
-    GridApi, ColDef,
-    ColGroupDef,
-    GridReadyEvent,
-    ModuleRegistry,
-} from 'ag-grid-community';
-import { IOlympicData } from './interfaces';
 import Theme from './Theme';
-
+import {option} from './Theme';
 import '../css/grid.css'
-export interface Options {
-    [key: string]: string
-}
+
 interface MyAgGridProps {
     apiUrl: string | null;
     enableRowGroupColumns: string | null;
@@ -33,35 +24,20 @@ interface MyAgGridProps {
     aggFuncColumns: string | null;
 }
 
-const AgGrid: React.FC<MyAgGridProps> = ({ apiUrl, enableRowGroupColumns, pivotColumns, aggFuncColumns }) => {
-    console.log("dixit : ", apiUrl)
-    const containerStyle = useMemo(() => ({ width: '100%', height: '100%' }), []);
-    const gridStyle = useMemo(() => ({ height: '100%', width: '100%' }), []);
+const AgGrid: React.FC<MyAgGridProps> = React.memo(({ apiUrl, enableRowGroupColumns, pivotColumns, aggFuncColumns }) => {
+    console.log('AG Grid')
     const [divClass, setDivClass] = useState('ag-theme-alpine');
     const [selectedOption, setSelectedOption] = useState<string>('');
-    const [rowData, setRowData] = useState<IOlympicData[]>();
-    const [autoDefName, setAutoDefName] = useState<keyof IOlympicData>("athlete");
-    const [columnDefs, setColumnDefs] = useState<(ColDef<IOlympicData, any> | ColGroupDef<IOlympicData>)[]>([
-        // { field: 'athlete',  enableRowGroup: true,},
-        // { field: 'age',  },
-        // { field: 'country' ,enablePivot:true},
-        // { field: 'year' },
-        // { field: 'date', },
-        // { field: 'sport',enableRowGroup: true, },
-        // { field: 'gold',aggFunc:'count' },
-        // { field: 'silver',aggFunc:'count' },
-        // { field: 'bronze',aggFunc:'count' },
-        // { field: 'total', aggFunc:'count'},
-    ]);
+    const [rowData, setRowData] = useState<any[]>([]);
+    const [autoDefName, setAutoDefName] = useState("athlete");
+    const [columnDefs, setColumnDefs] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
             let data;
             // const response = await fetch('https://www.ag-grid.com/example-assets/olympic-winners.json');
             try {
                 const response = await fetch(`${apiUrl}`);
-                console.log("response : ", response)
                 data = await response.json();
-                console.log("data : ", data)
                 setRowData(data);
             } catch (error) {
                 setRowData([]);
@@ -70,8 +46,7 @@ const AgGrid: React.FC<MyAgGridProps> = ({ apiUrl, enableRowGroupColumns, pivotC
 
             if (data && data.length > 0) {
                 const headers = Object.keys(data[0]);
-                setAutoDefName(headers[0] as keyof IOlympicData);
-                // check if the json data is valid
+                setAutoDefName(headers[0]);
 
                 const enableRowGroup: string[] = enableRowGroupColumns?.split(";") || [];
                 const enablePivot: string[] = pivotColumns?.split(";") || [];
@@ -89,13 +64,7 @@ const AgGrid: React.FC<MyAgGridProps> = ({ apiUrl, enableRowGroupColumns, pivotC
         fetchData();
 
     }, [apiUrl, enableRowGroupColumns, pivotColumns, aggFuncColumns])
-    console.log(columnDefs)
-    // const defaultColDef = useMemo<ColDef | any>(() => {
-    //     return {
-    //         width: 150,
-    //     };
-    // }, []);
-    const autoGroupColumnDef: ColDef<IOlympicData, any> = useMemo(() => {
+    const autoGroupColumnDef = useMemo(() => {
         return {
             minWidth: 270,
             field: autoDefName,
@@ -133,15 +102,11 @@ const AgGrid: React.FC<MyAgGridProps> = ({ apiUrl, enableRowGroupColumns, pivotC
         setSelectedOption(selectedOption)
         setDivClass(selectedOption);
     };
-    const option: Options = {
-        Alpine: "ag-theme-alpine",
-        Custom: "ag-theme-quartz",
-        Balham: "ag-theme-balham",
-    }
+
     return (
         <div className={divClass} style={{ width: '100%', height: '80vh' }}>
             <Theme options={option} onSelect={handleThemeChange} />
-            < AgGridReact<IOlympicData>
+            < AgGridReact
                 rowData={rowData}
                 columnDefs={columnDefs}
                 autoGroupColumnDef={autoGroupColumnDef}
@@ -151,12 +116,10 @@ const AgGrid: React.FC<MyAgGridProps> = ({ apiUrl, enableRowGroupColumns, pivotC
                 rowSelection={'multiple'}
                 groupSelectsChildren={true}
                 pivotPanelShow='always'
-                // defaultColDef={defaultColDef}
                 tooltipShowDelay={500}
-            // onGridReady={onGridReady}
             />
         </div>
     );
-};
+});
 
 export default AgGrid;

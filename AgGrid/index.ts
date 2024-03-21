@@ -1,6 +1,6 @@
 import { IInputs, IOutputs } from "./generated/ManifestTypes";
 import MyAgGrid from './components/AgGrid'
-import React from "react";
+import React, { useMemo } from "react";
 import ReactDOM from "react-dom";
 
 export class AgGrid implements ComponentFramework.StandardControl<IInputs, IOutputs> {
@@ -8,9 +8,9 @@ export class AgGrid implements ComponentFramework.StandardControl<IInputs, IOutp
     public height: number;
     private con: HTMLDivElement;
     private apiUrl: string | null;
-    private enableRowGroupColumns : string | null;
-    private pivotColumns : string | null;
-    private aggFuncColumns : string | null;
+    private enableRowGroupColumns: string | null;
+    private pivotColumns: string | null;
+    private aggFuncColumns: string | null;
     /**
      * Empty constructor.
      */
@@ -33,7 +33,7 @@ export class AgGrid implements ComponentFramework.StandardControl<IInputs, IOutp
 
         const height = context.mode.allocatedHeight;
         const width = context.mode.allocatedWidth;
-        
+
         this.apiUrl = context.parameters.ApiUrl.raw;
         this.enableRowGroupColumns = context.parameters.enableRowGroupColumns.raw;
         this.pivotColumns = context.parameters.pivotColumns.raw;
@@ -71,5 +71,6 @@ export class AgGrid implements ComponentFramework.StandardControl<IInputs, IOutp
      */
     public destroy(): void {
         // Add code to cleanup control if necessary
+        ReactDOM.unmountComponentAtNode(this.con);
     }
 }

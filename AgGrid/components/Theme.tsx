@@ -10,11 +10,21 @@ interface SelectComponentProps{
     options : {[key:string]:string},
     onSelect : (selectedOptions: string) => void;
 }
+interface Options {
+    [key: string]: string
+}
+export const option: Options = {
+    Alpine: "ag-theme-alpine",
+    Custom: "ag-theme-quartz",
+    Balham: "ag-theme-balham",
+}
+
 const Theme: React.FC<SelectComponentProps> = ({options,onSelect})=>{
     const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>)=>{
         const selectedOption = e.target.value;
         onSelect(selectedOption);
     }
+
     return (
         <div style={{display:'inline-block' }} >
         <label style={{color:'blue',display:'inline-block'}}>Select Theme:</label>

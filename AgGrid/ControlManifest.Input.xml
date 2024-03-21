@@ -35,6 +35,7 @@
     -->
     <resources>
       <code path="index.ts" order="1"/>
+      <!-- <code path="css/grid.css" order="1"/> -->
       <!-- UNCOMMENT TO ADD MORE RESOURCES
       <css path="css/AgGrid.css" order="1" />
       <resx path="strings/AgGrid.1033.resx" version="1.0.0" />
